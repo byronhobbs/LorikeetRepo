@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73A0703C-EB6C-4059-91C5-698D3DBFE408}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Lorikeet</RootNamespace>
+    <AssemblyName>Lorikeet</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1964.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.5.0.1964\lib\netstandard2.0\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql, Version=8.11.1172.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.MySql.8.11.1172\lib\netstandard2.0\Devart.Data.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql.Entity.EF6, Version=8.12.1202.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Devart\dotConnect\MySQL\Entity\EF6\Devart.Data.MySql.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql.Entity.Spatials.EF6, Version=8.10.1152.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Devart\dotConnect\MySQL\Entity\EF6\Devart.Data.MySql.Entity.Spatials.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql.Linq, Version=4.8.1509.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.MySql.Linq.4.8.1509\lib\netstandard2.0\Devart.Data.MySql.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Drawing, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DuoVia.FuzzyStrings, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DuoVia.FuzzyStrings.1.0.1\lib\net40\DuoVia.FuzzyStrings.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.8.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.8.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleApi, Version=3.4.2.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleApi.3.4.2\lib\net45\GoogleApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHunspell, Version=1.2.5554.16953, Culture=neutral, PublicKeyToken=1ac793ea843b4366, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHunspell.1.2.5554.16953\lib\net\NHunspell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.108.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEditor\AutoCompleteListEventArgs.cs" />
+    <Compile Include="CustomEditor\MyLookUpEdit.cs" />
+    <Compile Include="CustomEditor\RepositoryItemMyLookUpEdit.cs" />
+    <Compile Include="CustomMarkers\GMapMarkerCircle.cs" />
+    <Compile Include="CustomMarkers\GMapMarkerRect.cs" />
+    <Compile Include="CustomMarkers\GMarkerArrow.cs" />
+    <Compile Include="Data\Appointment.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AppointmentMember.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AppointmentsNumber.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Attendance.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AttendanceNumber.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Contact.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DebitSystem.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Diagnosi.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DiagnosisName.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GeocodeCache.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Guest.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Label.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Log.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Login.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LorikeetModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LorikeetModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LorikeetModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LorikeetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LorikeetModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Lunch.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Medication.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MedicationName.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Member.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Menu.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Note.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Picture.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Resource.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SignIn.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Staff.cs">
+      <DependentUpon>LorikeetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FiletypeClass.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddActivity.Designer.cs">
+      <DependentUpon>FormAddActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditContacts.designer.cs">
+      <DependentUpon>FormAddEditContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditDeleteDiagnosisMedication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditDeleteDiagnosisMedication.Designer.cs">
+      <DependentUpon>FormAddEditDeleteDiagnosisMedication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditMedication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditMedication.Designer.cs">
+      <DependentUpon>FormAddEditMedication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddNewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewFile.Designer.cs">
+      <DependentUpon>FormAddNewFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCheckDates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCheckDates.Designer.cs">
+      <DependentUpon>FormCheckDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChooseMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChooseMember.Designer.cs">
+      <DependentUpon>FormChooseMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCountryOfOrigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCountryOfOrigin.Designer.cs">
+      <DependentUpon>FormCountryOfOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditActivities.designer.cs">
+      <DependentUpon>FormEditActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditAppointmentMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditAppointmentMembers.designer.cs">
+      <DependentUpon>FormEditAppointmentMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditAppointmentNumbers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditAppointmentNumbers.Designer.cs">
+      <DependentUpon>FormEditAppointmentNumbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditAttendance.designer.cs">
+      <DependentUpon>FormEditAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditAttendanceNumbers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditAttendanceNumbers.Designer.cs">
+      <DependentUpon>FormEditAttendanceNumbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditMemberID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditMemberID.Designer.cs">
+      <DependentUpon>FormEditMemberID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportActivities.Designer.cs">
+      <DependentUpon>FormImportActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInput.Designer.cs">
+      <DependentUpon>FormInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMapHover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMapHover.Designer.cs">
+      <DependentUpon>FormMapHover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMDIDocumentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMDIDocumentViewer.Designer.cs">
+      <DependentUpon>FormMDIDocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMemberSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemberSelect.Designer.cs">
+      <DependentUpon>FormMemberSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewMemberWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewMemberWizard.Designer.cs">
+      <DependentUpon>FormNewMemberWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPassword.Designer.cs">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowWeather.designer.cs">
+      <DependentUpon>FormShowWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewerExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewerExcel.Designer.cs">
+      <DependentUpon>FormViewerExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewerPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewerPDF.Designer.cs">
+      <DependentUpon>FormViewerPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewerWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewerWord.Designer.cs">
+      <DependentUpon>FormViewerWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProgress.Designer.cs">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportCountryOfOriginsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportCountryOfOriginsReport.Designer.cs">
+      <DependentUpon>FormReportCountryOfOriginsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports.designer.cs">
+      <DependentUpon>FormReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSchedule.Designer.cs">
+      <DependentUpon>FormSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectActivities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectActivities.Designer.cs">
+      <DependentUpon>FormSelectActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectMonths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectMonths.Designer.cs">
+      <DependentUpon>FormSelectMonths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="Interfaces\IViewingForm.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="LorikeetAppDataSet.cs">
+      <DependentUpon>LorikeetAppDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LorikeetAppDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LorikeetAppDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MiscStuff.cs" />
+    <Compile Include="Models\ForecastModel.cs" />
+    <Compile Include="Models\List.cs" />
+    <Compile Include="Models\TempForecastModel.cs" />
+    <Compile Include="Models\WeatherAndForecast.cs" />
+    <Compile Include="Models\WeatherModel.cs" />
+    <Compile Include="OpenWeatherMap.cs" />
+    <Compile Include="OutlookAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutlookAppointmentForm.designer.cs">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormAddEditDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditDiagnosis.Designer.cs">
+      <DependentUpon>FormAddEditDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditNotes.Designer.cs">
+      <DependentUpon>FormAddEditNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditMember.Designer.cs">
+      <DependentUpon>FormEditMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditDebitCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditDebitCredit.Designer.cs">
+      <DependentUpon>FormAddEditDebitCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spelling.cs" />
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringCompareClass.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportDataFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportDataFile.Designer.cs">
+      <DependentUpon>FormImportDataFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditLogin.Designer.cs">
+      <DependentUpon>FormAddEditLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportActivities.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportActivities.Designer.cs">
+      <DependentUpon>XtraReportActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportAttendance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportAttendance.Designer.cs">
+      <DependentUpon>XtraReportAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportBirthdayList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportBirthdayList.Designer.cs">
+      <DependentUpon>XtraReportBirthdayList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportDebitCredit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportDebitCredit.Designer.cs">
+      <DependentUpon>XtraReportDebitCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportDebtors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportDebtors.Designer.cs">
+      <DependentUpon>XtraReportDebtors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportMailingLabels.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportMailingLabels.designer.cs">
+      <DependentUpon>XtraReportMailingLabels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportMemberInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportMemberInfo.Designer.cs">
+      <DependentUpon>XtraReportMemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportNotes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReports\XtraReportNotes.Designer.cs">
+      <DependentUpon>XtraReportNotes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddActivity.resx">
+      <DependentUpon>FormAddActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditContacts.resx">
+      <DependentUpon>FormAddEditContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditDebitCredit.resx">
+      <DependentUpon>FormAddEditDebitCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditDeleteDiagnosisMedication.resx">
+      <DependentUpon>FormAddEditDeleteDiagnosisMedication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditLogin.resx">
+      <DependentUpon>FormAddEditLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditMedication.resx">
+      <DependentUpon>FormAddEditMedication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditDiagnosis.resx">
+      <DependentUpon>FormAddEditDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditNotes.resx">
+      <DependentUpon>FormAddEditNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNewFile.resx">
+      <DependentUpon>FormAddNewFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCheckDates.resx">
+      <DependentUpon>FormCheckDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChooseMember.resx">
+      <DependentUpon>FormChooseMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCountryOfOrigin.resx">
+      <DependentUpon>FormCountryOfOrigin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditActivities.resx">
+      <DependentUpon>FormEditActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditAppointmentMembers.resx">
+      <DependentUpon>FormEditAppointmentMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditAppointmentNumbers.resx">
+      <DependentUpon>FormEditAppointmentNumbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditAttendance.resx">
+      <DependentUpon>FormEditAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditAttendanceNumbers.resx">
+      <DependentUpon>FormEditAttendanceNumbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditMember.resx">
+      <DependentUpon>FormEditMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditMemberID.resx">
+      <DependentUpon>FormEditMemberID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportActivities.resx">
+      <DependentUpon>FormImportActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportDataFile.resx">
+      <DependentUpon>FormImportDataFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInput.resx">
+      <DependentUpon>FormInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMapHover.resx">
+      <DependentUpon>FormMapHover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMDIDocumentViewer.resx">
+      <DependentUpon>FormMDIDocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMemberSelect.resx">
+      <DependentUpon>FormMemberSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewMemberWizard.resx">
+      <DependentUpon>FormNewMemberWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPassword.resx">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowWeather.resx">
+      <DependentUpon>FormShowWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewerExcel.resx">
+      <DependentUpon>FormViewerExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewerPDF.resx">
+      <DependentUpon>FormViewerPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewerWord.resx">
+      <DependentUpon>FormViewerWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProgress.resx">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportCountryOfOriginsReport.resx">
+      <DependentUpon>FormReportCountryOfOriginsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports.resx">
+      <DependentUpon>FormReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSchedule.resx">
+      <DependentUpon>FormSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectActivities.resx">
+      <DependentUpon>FormSelectActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectMonths.resx">
+      <DependentUpon>FormSelectMonths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutlookAppointmentForm.resx">
+      <DependentUpon>OutlookAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportActivities.resx">
+      <DependentUpon>XtraReportActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportAttendance.resx">
+      <DependentUpon>XtraReportAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportBirthdayList.resx">
+      <DependentUpon>XtraReportBirthdayList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportDebitCredit.resx">
+      <DependentUpon>XtraReportDebitCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportDebtors.resx">
+      <DependentUpon>XtraReportDebtors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportMailingLabels.resx">
+      <DependentUpon>XtraReportMailingLabels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportMemberInfo.resx">
+      <DependentUpon>XtraReportMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReports\XtraReportNotes.resx">
+      <DependentUpon>XtraReportNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="Data\LorikeetModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LorikeetModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\LorikeetModel.edmx.diagram">
+      <DependentUpon>LorikeetModel.edmx</DependentUpon>
+    </None>
+    <None Include="LorikeetAppDataSet.xsc">
+      <DependentUpon>LorikeetAppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LorikeetAppDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LorikeetAppDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LorikeetAppDataSet.xss">
+      <DependentUpon>LorikeetAppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="custom-reports.ico" />
+    <Content Include="Data\LorikeetModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LorikeetModel.edmx</DependentUpon>
+      <LastGenOutput>LorikeetModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\LorikeetModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LorikeetModel.edmx</DependentUpon>
+      <LastGenOutput>LorikeetModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="leafletjs\dist\images\layers.png" />
+    <Content Include="leafletjs\dist\images\locate.png" />
+    <Content Include="leafletjs\dist\images\locate.svg" />
+    <Content Include="leafletjs\dist\images\locate_active.png" />
+    <Content Include="leafletjs\dist\images\marker-icon%402x.png" />
+    <Content Include="leafletjs\dist\images\marker-icon.png" />
+    <Content Include="leafletjs\dist\images\marker-shadow.png" />
+    <Content Include="leafletjs\dist\images\spinner.gif" />
+    <Content Include="leafletjs\dist\leaflet-ie.css" />
+    <Content Include="leafletjs\dist\leaflet.css" />
+    <Content Include="leafletjs\dist\leaflet.js" />
+    <Content Include="leafletjs\dist\locate-ie.css" />
+    <Content Include="leafletjs\dist\locate.css" />
+    <Content Include="leafletjs\dist\locate.js" />
+    <Content Include="leafletjs\dist\mobile.css" />
+    <Content Include="leafletjs\dist\proj4js-compressed.js" />
+    <Content Include="leafletjs\dist\proj4leaflet.js" />
+    <Content Include="leafletjs\gmap.html" />
+    <Content Include="Resources\success.ico" />
+    <None Include="Resources\frostsuncloud.png" />
+    <None Include="Resources\night2.jpg" />
+    <None Include="Resources\night11.jpg" />
+    <None Include="Hunspellx64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Hunspellx86.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Images\custom-reports.png" />
+    <Content Include="Images\diagnosis.jpg" />
+    <None Include="Images\images.jpg" />
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\nomemberpic.png" />
+    <Content Include="Images\Treatment-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>
